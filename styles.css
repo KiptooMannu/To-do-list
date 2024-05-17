@@ -1,0 +1,185 @@
+html,
+body{
+    margin: 0;
+    padding:0;
+    height:100%;
+    width:100%
+}
+
+*{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row nowwrap;
+    align-items: center;
+
+}
+
+.theme-dark{
+    --bg-top-image :0 0 url(./images/bg-desktop-dark.jpg) no-repeat ;
+    --main-bg:hsl(235,21%,11%);
+    --todo-bg:hsl(235,24%,19%);
+    --font-color:hsl(234 , 39% , 85%);
+    --font-color-hover:#fff;
+    background-repeat:no-repeat;
+
+}
+.theme-light{
+    --bg-top-image:0 0 url(./images/bg-desktop-light.jpg) no-repeat;
+    --main-bg:hsl(0,0%,98%);
+    --todo-bg:hsl(0,0%,98%);
+    --to-do-shadow:(235, 19% ,35%);
+    --font-color:hsl(236, 9%, 61%);
+    --font-color-hover:hsl(235,21%, 11%);
+
+}
+body{
+    font: 400 18px/1 "josefin sans", sans-serif;
+    background: var(--bg-top-image);
+    background-color: var(--main-bg);
+    background-size: contain;
+    color:var(--font-color);
+}
+header{
+    justify-content: space-between;
+    padding: 52px 0 11px;
+}
+
+header,
+main{
+max-width: 545px;
+margin: 0 auto;
+}
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+  color: #fff;
+  letter-spacing: 1rem;
+}
+
+.theme-block #theme{
+    display:none;
+}
+
+.theme-block #theme + label::before{
+    content: "";
+   background: url(./images/icon-sun.svg);
+   display: block;
+   width: 26px;
+   height: 26px;
+   cursor: pointer;
+}
+
+.theme-block #theme:checked+label::before{
+    /* content: ""; */
+   background: url(./images/icon-moon.svg);
+}
+
+.add-new-item{
+    background: var(--todo-bg);
+    height: 65px;
+    border-radius: 5px;
+    margin:0 0 24px;
+    padding: 0 26px;
+    position: relative;
+}
+
+.add-new-item #additem {
+    margin: 4px 0 0 47px;
+background: transparent;
+color: var(--font-color);
+border: 0;
+outline: 0;
+width:100%;
+height:50px;
+font: 400 18px/1 "Josefin sans";
+letter-spacing: -0.3px;
+
+}
+
+
+.add-new-item apan{
+    width:25px;
+    height: 25px;
+    position: absolute;
+    top: 21px;
+    left: 21px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--font-color);
+    display: block;
+}
+
+
+.add-new-item span:hover{
+    background: center url(./images/icon-check.svg) no-repeat;
+}
+.content{
+    background: var(--todo-bg);
+    border-radius: 5px;
+    box-shadow: 0 42px 30px -9px var(--to-do-shadow);
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li{
+    padding: 0 10px 0 25px;
+    border-bottom: 1px solid var(--todo-bg);
+    min-height: 65px;
+    border-bottom: 1px solid var(--font-color);
+    position: relative;
+}
+
+ul li input[type="checkbox"]{
+    position: absolute;
+   
+    width: 0;
+    height: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+ul li label{
+    position: relative;
+    cursor: pointer;
+    padding: 2px 0 0 48px;
+    font-size: 1.1rem;
+}
+
+.checkmark{
+    position: absolute;
+    top: 5px;
+    left: 0;
+   height: 25px;
+   width: 25px;
+
+}
+
+ul li hidden{
+    display: none;
+
+}
+
+/* ul li input[type="checkbox"]:checked ~.checkmark{
+    background: url(./images/icon-check.svg) ;
+    border-radius: 50px;
+    /* background-size: contain; */
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--font-color);
+    background-color: var(--font-color-hover);
+    margin-left: 25px;
+    
+} */ 
+
+
+
+
